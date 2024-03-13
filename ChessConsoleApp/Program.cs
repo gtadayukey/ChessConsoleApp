@@ -1,10 +1,16 @@
-﻿namespace ChessConsoleApp
+﻿using ChessBoard;
+
+namespace ChessConsoleApp
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Position P;
+
+            P = new(3, 4);
+
+            Console.WriteLine("Posicao " + P);
         }
     }
 }
