@@ -6,11 +6,7 @@ namespace ChessConsoleApp
     {
         static void Main(string[] args)
         {
-            Position P;
-
-            P = new(3, 4);
-
-            Console.WriteLine("Posicao " + P);
+            
         }
     }
 }
