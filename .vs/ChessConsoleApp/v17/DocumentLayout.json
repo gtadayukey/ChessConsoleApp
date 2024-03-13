@@ -3,40 +3,24 @@
   "WorkspaceRootPath": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessgame\\king.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessgame\\king.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessgame\\queen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessgame\\queen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessgame\\tower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessgame\\tower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessboard\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessboard\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessboard\\piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessboard\\piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessboard\\exceptions\\boardexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessboard\\exceptions\\boardexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessboard\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessboard\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessgame\\horse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessgame\\horse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\display.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessgame\\bishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessgame\\bishop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessboard\\enums\\piececolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessboard\\enums\\piececolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PieceColor.cs",
-              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Enums\\PieceColor.cs",
-              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessBoard\\Enums\\PieceColor.cs",
-              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Enums\\PieceColor.cs",
-              "RelativeToolTip": "ChessConsoleApp\\ChessBoard\\Enums\\PieceColor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:22:57.932Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Display.cs",
-              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\Display.cs",
-              "RelativeDocumentMoniker": "ChessConsoleApp\\Display.cs",
-              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\Display.cs",
-              "RelativeToolTip": "ChessConsoleApp\\Display.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:22:01.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Queen.cs",
-              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Queen.cs",
-              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessGame\\Queen.cs",
-              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Queen.cs",
-              "RelativeToolTip": "ChessConsoleApp\\ChessGame\\Queen.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
+              "Title": "Horse.cs",
+              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Horse.cs",
+              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessGame\\Horse.cs",
+              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Horse.cs",
+              "RelativeToolTip": "ChessConsoleApp\\ChessGame\\Horse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:20:14.465Z",
+              "WhenOpened": "2024-03-13T21:11:15.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Tower.cs",
-              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Tower.cs",
-              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessGame\\Tower.cs",
-              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Tower.cs",
-              "RelativeToolTip": "ChessConsoleApp\\ChessGame\\Tower.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAApAAAA",
+              "Title": "Bishop.cs",
+              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Bishop.cs",
+              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessGame\\Bishop.cs",
+              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Bishop.cs",
+              "RelativeToolTip": "ChessConsoleApp\\ChessGame\\Bishop.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:18:50.67Z",
+              "WhenOpened": "2024-03-13T21:11:14.939Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "King.cs",
-              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\King.cs",
-              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessGame\\King.cs",
-              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\King.cs",
-              "RelativeToolTip": "ChessConsoleApp\\ChessGame\\King.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAXAAAA",
+              "Title": "BoardException.cs",
+              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Exceptions\\BoardException.cs",
+              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessBoard\\Exceptions\\BoardException.cs",
+              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Exceptions\\BoardException.cs",
+              "RelativeToolTip": "ChessConsoleApp\\ChessBoard\\Exceptions\\BoardException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T12:15:23.863Z",
+              "WhenOpened": "2024-03-13T21:03:18.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\Program.cs",
               "RelativeDocumentMoniker": "ChessConsoleApp\\Program.cs",
               "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\Program.cs",
               "RelativeToolTip": "ChessConsoleApp\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T11:52:55.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Board.cs",
               "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Board.cs",
               "RelativeDocumentMoniker": "ChessConsoleApp\\ChessBoard\\Board.cs",
               "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Board.cs",
               "RelativeToolTip": "ChessConsoleApp\\ChessBoard\\Board.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAwwAUAAAABAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAgwB4AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T11:27:26.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Piece.cs",
-              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Piece.cs",
-              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessBoard\\Piece.cs",
-              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Piece.cs",
-              "RelativeToolTip": "ChessConsoleApp\\ChessBoard\\Piece.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T11:24:15.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Position.cs",
-              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Position.cs",
-              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessBoard\\Position.cs",
-              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessBoard\\Position.cs",
-              "RelativeToolTip": "ChessConsoleApp\\ChessBoard\\Position.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T10:47:03.689Z",
               "EditorCaption": ""
             }
           ]

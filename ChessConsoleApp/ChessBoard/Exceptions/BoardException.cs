@@ -1,4 +1,4 @@
-﻿namespace ChessConsoleApp.ChessBoard.Exceptions
+﻿namespace ChessBoard.Exceptions
 {
     internal class BoardException : Exception
     {
