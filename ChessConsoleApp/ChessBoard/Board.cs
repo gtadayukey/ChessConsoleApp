@@ -33,6 +33,11 @@ namespace ChessBoard
 
         public void PlacePiece(Piece piece, Position position)
         {
+            if(ExistPiece(position))
+            {
+                throw new BoardException("Already have a piece placed here!");
+            }
+
             Pieces[position.Line, position.Column] = piece;
             piece.Position = position;
         }
