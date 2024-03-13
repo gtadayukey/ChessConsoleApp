@@ -5,8 +5,12 @@ using ChessConsoleApp;
 using ChessConsoleApp.ChessGame;
 using ChessGame;
 
-ChessPosition chessPosition = new('c', 7);
+Board board = new(8, 8);
 
-Console.WriteLine(chessPosition);
+board.PlacePiece(new Tower(board, PieceColor.Black), new Position(2, 3));
+board.PlacePiece(new Tower(board, PieceColor.Black), new Position(2, 5));
+board.PlacePiece(new King(board, PieceColor.Black), new Position(2, 4));
+board.PlacePiece(new Queen(board, PieceColor.White), new Position(5, 7));
+board.PlacePiece(new King(board, PieceColor.White), new Position(4, 7));
 
-Console.WriteLine(chessPosition.ToPosition());
+Display.PrintBoard(board);
