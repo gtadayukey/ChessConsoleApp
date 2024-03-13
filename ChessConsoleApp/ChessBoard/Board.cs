@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
 namespace ChessBoard
 {
     internal class Board
@@ -22,6 +20,12 @@ namespace ChessBoard
         public Piece Piece(int line, int column)
         {
             return Pieces[line, column];
+        }
+
+        public void PlacePiece(Piece piece, Position position)
+        {
+            Pieces[position.Line, position.Column] = piece;
+            piece.Position = position;
         }
     }
 }
