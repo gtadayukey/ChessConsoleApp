@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-namespace ChessBoard
+﻿namespace ChessBoard
 {
     internal class Board
     {
         public int Line { get; set; }
         public int Column { get; set; }
-        private Piece[,] Pieces;
+        private readonly Piece[,] Pieces;
 
         public Board(int line, int column)
         {
