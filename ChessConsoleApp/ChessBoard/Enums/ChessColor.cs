@@ -1,6 +1,6 @@
 ﻿namespace ChessBoard.Enums
 {
-    enum PieceColor
+    enum ChessColor
     {
         White, 
         Black

@@ -42,6 +42,20 @@ namespace ChessBoard
             piece.Position = position;
         }
 
+        public Piece RemovePiece(Position position)
+        {
+            if (ExistPiece(position))
+            {
+                throw new BoardException("This position has no pieces!");
+            }
+
+            Piece aux = Piece(position);
+
+            aux.Position = null;
+            Pieces[position.Row, position.Column] = null;
+            return aux;
+        }
+
         public bool ValidPosition(Position position)
         {
             if(position.Row < 0 || position.Column < 0 || position.Row > Rows || position.Column > Columns)

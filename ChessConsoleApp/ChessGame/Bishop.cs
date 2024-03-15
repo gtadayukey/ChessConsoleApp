@@ -5,7 +5,7 @@ namespace ChessGame
 {
     internal class Bishop : Piece
     {
-        public Bishop(Board board, PieceColor color) : base(board, color) { }
+        public Bishop(Board board, ChessColor color) : base(board, color) { }
 
         public override string ToString()
         {

@@ -6,16 +6,21 @@ namespace ChessBoard
     internal class Piece
     {
         public Position? Position { get; set; }
-        public PieceColor Color { get; protected set; }
-        public int MovementsQuantity { get; protected set; }
+        public ChessColor Color { get; protected set; }
+        public int MovementAmount { get; protected set; }
         public Board Board { get; protected set; }
 
-        public Piece(Board board, PieceColor color)
+        public Piece(Board board, ChessColor color)
         {
             Position = null;
             Color = color;
             Board = board;
-            MovementsQuantity = 0;
+            MovementAmount = 0;
+        }
+
+        public void AddMovementAmount()
+        {
+            MovementAmount++;
         }
     }
 }
