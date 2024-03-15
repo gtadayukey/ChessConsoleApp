@@ -10,12 +10,14 @@ namespace ChessConsoleApp.ChessGame
         public Board Board { get; private set; }
         private int Turn { get; set; }
         private ChessColor Color { get; set; }
+        public bool Finished { get; private set; }
 
         public ChessMatch()
         {
             Board = new Board(8, 8);
             Turn = 1;
             Color = ChessColor.White;
+            Finished = false;
             BuildBoardSetup();
         }
 

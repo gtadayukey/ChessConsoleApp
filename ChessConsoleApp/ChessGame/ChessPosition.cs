@@ -18,7 +18,7 @@ namespace ChessConsoleApp.ChessGame
             return new Position(8 - Row, Column - 'a');
         }
 
-        public override string ToString() 
+        public override string ToString()
         {
             return "" + Column + Row;
         }

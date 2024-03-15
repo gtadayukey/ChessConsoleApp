@@ -44,9 +44,9 @@ namespace ChessBoard
 
         public Piece RemovePiece(Position position)
         {
-            if (ExistPiece(position))
+            if (Piece(position) == null)
             {
-                throw new BoardException("This position has no pieces!");
+                return null;
             }
 
             Piece aux = Piece(position);
