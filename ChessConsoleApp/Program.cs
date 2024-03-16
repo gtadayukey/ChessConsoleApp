@@ -22,7 +22,6 @@ try
         match.ExecuteMovement(origin, destiny);
     }
 
-
 }
 catch(BoardException e)
 {

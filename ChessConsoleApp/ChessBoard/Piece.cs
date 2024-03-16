@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace ChessBoard
 {
-    internal class Piece
+    internal abstract class Piece
     {
         public Position? Position { get; set; }
         public ChessColor Color { get; protected set; }
@@ -22,5 +22,7 @@ namespace ChessBoard
         {
             MovementAmount++;
         }
+
+        public abstract bool[,] PossibleMovement();
     }
 }
