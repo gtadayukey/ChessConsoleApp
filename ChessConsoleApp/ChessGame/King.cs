@@ -20,67 +20,33 @@ namespace ChessGame
 
         public override bool[,] PossibleMovement()
         {
-            bool[,] matrix = new bool[Board.Rows,Board.Columns];
+            bool[,] matrix = new bool[Board.Rows, Board.Columns];
             Position position = new(0, 0);
 
-            // Top Mid
-            position.SetValues(position.Row - 1, position.Column);
-            if(Board.ValidPosition(position) && CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-            }
+            int[,] positionsToValidate = {
+                                           { -1, 0 },
+                                           { -1, 1 },
+                                           { -1, -1 },
+                                           { 0, 1 },
+                                           { 0, -1 },
+                                           { 1, 0 },
+                                           { 1, 1 },
+                                           { 1, -1 },
+            };
 
-            // Top Right
-            position.SetValues(position.Row - 1, position.Column + 1);
-            if (Board.ValidPosition(position) && CanMove(position))
+            for (int i = 0; i < positionsToValidate.GetLength(0); i++)
             {
-                matrix[position.Row, position.Column] = true;
-            }
+                int rowPoint = positionsToValidate[i, 0];
+                int collumnPoint = positionsToValidate[i, 1];
+                position.SetValues(position.Row + rowPoint, position.Column + collumnPoint);
 
-            // Top Left
-            position.SetValues(position.Row - 1, position.Column - 1);
-            if (Board.ValidPosition(position) && CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-            }
-
-            // Mid Right
-            position.SetValues(position.Row, position.Column + 1);
-            if (Board.ValidPosition(position) && CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-            }
-
-            // Mid Left
-            position.SetValues(position.Row, position.Column - 1);
-            if (Board.ValidPosition(position) && CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-            }
-
-            // Bottom Mid
-            position.SetValues(position.Row + 1, position.Column);
-            if (Board.ValidPosition(position) && CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-            }
-
-            // Bottom Right
-            position.SetValues(position.Row + 1, position.Column + 1);
-            if (Board.ValidPosition(position) && CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-            }
-
-            // Bottom Left
-            position.SetValues(position.Row + 1, position.Column - 1);
-            if (Board.ValidPosition(position) && CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
+                if (Board.ValidPosition(position) && CanMove(position))
+                {
+                    matrix[position.Row, position.Column] = true;
+                }
             }
 
             return matrix;
-
         }
     }
 }
