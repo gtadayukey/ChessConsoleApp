@@ -25,17 +25,14 @@ namespace ChessConsoleApp.ChessGame
         {
             Piece piece = Board.RemovePiece(origin);
             piece.AddMovementAmount();
-            Piece capturedPiece = Board.RemovePiece(destiny);
+            Board.RemovePiece(destiny);
             Board.PlacePiece(piece, destiny);   
         }
 
         private void BuildBoardSetup()
         {
-            Board.PlacePiece(new Bishop(Board, ChessColor.Black), new ChessLabel('e', 4).ToPosition());
-            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('f', 5).ToPosition());
-            Board.PlacePiece(new Tower(Board, ChessColor.Black), new ChessLabel('f', 3).ToPosition());
-            Board.PlacePiece(new King(Board, ChessColor.White), new ChessLabel('d', 5).ToPosition());
-            Board.PlacePiece(new King(Board, ChessColor.Black), new ChessLabel('d', 3).ToPosition());
+            Board.PlacePiece(new Queen(Board, ChessColor.Black), new ChessLabel('e', 4).ToPosition());
+
 
             //Board.PlacePiece(new Tower(Board, ChessColor.White), new ChessPosition('a', 1).ToPosition());
             //Board.PlacePiece(new Horse(Board, ChessColor.White), new ChessPosition('b', 1).ToPosition());
