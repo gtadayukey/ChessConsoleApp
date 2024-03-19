@@ -45,8 +45,6 @@ namespace ChessGame
                 int collumnPoint = positionsToValidate[i, 1];
                 position.SetValues(Position.Row + rowPoint, Position.Column + collumnPoint);
 
-                Console.WriteLine(CanMove(position));
-
                 if (CanMove(position))
                 {
                     matrix[position.Row, position.Column] = true;
