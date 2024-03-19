@@ -28,61 +28,29 @@ namespace ChessGame
             bool[,] matrix = new bool[Board.Rows, Board.Columns];
             Position position = new(0, 0);
 
-            // Top
-            position.SetValues(Position.Row - 1, Position.Column);
+            int[,] positionsToValidate = {
+                                           { -1, 0},
+                                           { 1, 0},
+                                           { 0, -1},
+                                           { 0, 1}
+            };
 
-            while (CanMove(position))
+            for (int i = 0; i < positionsToValidate.GetLength(0); i++)
             {
-                matrix[position.Row, position.Column] = true;
-                if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
+                position.SetValues(Position.Row + positionsToValidate[i, 0], Position.Column + positionsToValidate[i, 1]);
+
+                while (CanMove(position))
                 {
-                    break;
+                    matrix[position.Row, position.Column] = true;
+                    if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
+                    {
+                        break;
+                    }
+
+                    position.Row += positionsToValidate[i, 0];
+                    position.Column += positionsToValidate[i, 1];
                 }
-
-                position.Row--;
             }
-
-
-            // Bottom
-            position.SetValues(Position.Row + 1, Position.Column);
-
-            while (CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-                if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
-                {
-                    break;
-                }
-
-                position.Row++;
-            }
-
-            // Right
-            position.SetValues(Position.Row, Position.Column - 1);
-            while (CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-                if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
-                {
-                    break;
-                }
-
-                position.Column--;
-            }
-
-            // Left
-            position.SetValues(Position.Row, Position.Column + 1);
-            while (CanMove(position))
-            {
-                matrix[position.Row, position.Column] = true;
-                if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
-                {
-                    break;
-                }
-
-                position.Column++;
-            }
-
 
             return matrix;
         }

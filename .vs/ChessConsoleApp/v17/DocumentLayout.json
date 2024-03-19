@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessgame\\tower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessgame\\tower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|d:\\estudos backend\\c#\\programasoo\\chessconsoleapp\\chessconsoleapp\\chessgame\\king.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D11C457-FFBE-4FC6-8AA0-2E24C2CC299D}|ChessConsoleApp\\ChessConsoleApp.csproj|solutionrelative:chessconsoleapp\\chessgame\\king.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +22,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "King.cs",
+              "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\King.cs",
+              "RelativeDocumentMoniker": "ChessConsoleApp\\ChessGame\\King.cs",
+              "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\King.cs",
+              "RelativeToolTip": "ChessConsoleApp\\ChessGame\\King.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAA5wCcAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T17:28:04.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Tower.cs",
               "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Tower.cs",
               "RelativeDocumentMoniker": "ChessConsoleApp\\ChessGame\\Tower.cs",
               "ToolTip": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessGame\\Tower.cs",
               "RelativeToolTip": "ChessConsoleApp\\ChessGame\\Tower.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAAwDkAAABAAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAAAwwDQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-18T19:38:24.839Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\Program.cs",
               "RelativeDocumentMoniker": "ChessConsoleApp\\Program.cs",
