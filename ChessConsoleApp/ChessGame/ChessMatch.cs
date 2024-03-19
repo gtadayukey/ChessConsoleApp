@@ -31,42 +31,40 @@ namespace ChessConsoleApp.ChessGame
 
         private void BuildBoardSetup()
         {
-            Board.PlacePiece(new Queen(Board, ChessColor.Black), new ChessLabel('e', 4).ToPosition());
 
+            Board.PlacePiece(new Tower(Board, ChessColor.White), new ChessLabel('a', 1).ToPosition());
+            Board.PlacePiece(new Horse(Board, ChessColor.White), new ChessLabel('b', 1).ToPosition());
+            Board.PlacePiece(new Bishop(Board, ChessColor.White), new ChessLabel('c', 1).ToPosition());
+            Board.PlacePiece(new Queen(Board, ChessColor.White), new ChessLabel('d', 1).ToPosition());
+            Board.PlacePiece(new King(Board, ChessColor.White), new ChessLabel('e', 1).ToPosition());
+            Board.PlacePiece(new Bishop(Board, ChessColor.White), new ChessLabel('f', 1).ToPosition());
+            Board.PlacePiece(new Horse(Board, ChessColor.White), new ChessLabel('g', 1).ToPosition());
+            Board.PlacePiece(new Tower(Board, ChessColor.White), new ChessLabel('h', 1).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('a', 2).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('b', 2).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('c', 2).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel  ('d', 2).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('e', 2).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('f', 2).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('g', 2).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('h', 2).ToPosition());
 
-            //Board.PlacePiece(new Tower(Board, ChessColor.White), new ChessPosition('a', 1).ToPosition());
-            //Board.PlacePiece(new Horse(Board, ChessColor.White), new ChessPosition('b', 1).ToPosition());
-            //Board.PlacePiece(new Bishop(Board, ChessColor.White), new ChessPosition('c', 1).ToPosition());
-            //Board.PlacePiece(new Queen(Board, ChessColor.White), new ChessPosition('d', 1).ToPosition());
-            //Board.PlacePiece(new King(Board, ChessColor.White), new ChessPosition('e', 1).ToPosition());
-            //Board.PlacePiece(new Bishop(Board, ChessColor.White), new ChessPosition('f', 1).ToPosition());
-            //Board.PlacePiece(new Horse(Board, ChessColor.White), new ChessPosition('g', 1).ToPosition());
-            //Board.PlacePiece(new Tower(Board, ChessColor.White), new ChessPosition('h', 1).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('a', 2).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('b', 2).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('c', 2).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('d', 2).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('e', 2).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('f', 2).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('g', 2).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('h', 2).ToPosition());
-
-            //Board.PlacePiece(new Tower(Board, ChessColor.Black), new ChessPosition('a', 8).ToPosition());
-            //Board.PlacePiece(new Horse(Board, ChessColor.Black), new ChessPosition('b', 8).ToPosition());
-            //Board.PlacePiece(new Bishop(Board, ChessColor.Black), new ChessPosition('c', 8).ToPosition());
-            //Board.PlacePiece(new Queen(Board, ChessColor.Black), new ChessPosition('d', 8).ToPosition());
-            //Board.PlacePiece(new King(Board, ChessColor.Black), new ChessPosition('e', 8).ToPosition());
-            //Board.PlacePiece(new Bishop(Board, ChessColor.Black), new ChessPosition('f', 8).ToPosition());
-            //Board.PlacePiece(new Horse(Board, ChessColor.Black), new ChessPosition('g', 8).ToPosition());
-            //Board.PlacePiece(new Tower(Board, ChessColor.Black), new ChessPosition('h', 8).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('a', 7).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('b', 7).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('c', 7).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('d', 7).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('e', 7).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('f', 7).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('g', 7).ToPosition());
-            //Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('h', 7).ToPosition());
+            Board.PlacePiece(new Tower(Board, ChessColor.Black), new ChessLabel('a', 8).ToPosition());
+            Board.PlacePiece(new Horse(Board, ChessColor.Black), new ChessLabel('b', 8).ToPosition());
+            Board.PlacePiece(new Bishop(Board, ChessColor.Black), new ChessLabel('c', 8).ToPosition());
+            Board.PlacePiece(new Queen(Board, ChessColor.Black), new ChessLabel('d', 8).ToPosition());
+            Board.PlacePiece(new King(Board, ChessColor.Black), new ChessLabel('e', 8).ToPosition());
+            Board.PlacePiece(new Bishop(Board, ChessColor.Black), new ChessLabel('f', 8).ToPosition());
+            Board.PlacePiece(new Horse(Board, ChessColor.Black), new ChessLabel('g', 8).ToPosition());
+            Board.PlacePiece(new Tower(Board, ChessColor.Black), new ChessLabel('h', 8).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessLabel('a', 7).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessLabel('b', 7).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessLabel('c', 7).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessLabel('d', 7).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessLabel('e', 7).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessLabel('f', 7).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessLabel('g', 7).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessLabel('h', 7).ToPosition());
         }
     }
 }
