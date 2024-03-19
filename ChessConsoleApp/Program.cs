@@ -1,9 +1,7 @@
 ﻿using ChessBoard;
-using ChessBoard.Enums;
 using ChessBoard.Exceptions;
 using ChessConsoleApp;
 using ChessConsoleApp.ChessGame;
-using ChessGame;
 
 try
 {
@@ -16,7 +14,13 @@ try
 
         Console.Write("\nOrigin: ");
         Position origin = Display.ReadChessPosition().ToPosition();
-        Console.Write("Destiny: ");
+
+        bool[,] possibleMovement = match.Board.Piece(origin).PossibleMovement();
+
+        Console.Clear();
+        Display.PrintBoard(match.Board, possibleMovement);
+
+        Console.Write("\nDestiny: ");
         Position destiny = Display.ReadChessPosition().ToPosition();
 
         match.ExecuteMovement(origin, destiny);

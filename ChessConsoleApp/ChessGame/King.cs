@@ -38,7 +38,7 @@ namespace ChessGame
             {
                 int rowPoint = positionsToValidate[i, 0];
                 int collumnPoint = positionsToValidate[i, 1];
-                position.SetValues(position.Row + rowPoint, position.Column + collumnPoint);
+                position.SetValues(Position.Row + rowPoint, Position.Column + collumnPoint);
 
                 if (Board.ValidPosition(position) && CanMove(position))
                 {

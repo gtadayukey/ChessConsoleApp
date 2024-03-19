@@ -15,7 +15,12 @@ namespace ChessGame
         private bool CanMove(Position position)
         {
             Piece piece = Board.Piece(position);
-            return piece == null || piece.Color != Color;
+            if (piece == null || piece.Color != Color)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public override bool[,] PossibleMovement()
@@ -23,8 +28,58 @@ namespace ChessGame
             bool[,] matrix = new bool[Board.Rows, Board.Columns];
             Position position = new(0, 0);
 
-            
-            
+            // Top
+            position.SetValues(Position.Row - 1, Position.Column);
+            while (Board.ValidPosition(position) && CanMove(position))
+            {
+                matrix[position.Row, position.Column] = true;
+                if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
+                {
+                    break;
+                }
+
+                position.Row--;
+            }
+
+            //// Bottom
+            //position.SetValues(Position.Row + 1, Position.Column);
+            //while (Board.ValidPosition(position) && CanMove(position))
+            //{
+            //    matrix[position.Row, position.Column] = true;
+            //    if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
+            //    {
+            //        break;
+            //    }
+
+            //    position.Row++;
+            //}
+
+            // Right
+            position.SetValues(Position.Row, Position.Column - 1);
+            while (Board.ValidPosition(position) && CanMove(position))
+            {
+                matrix[position.Row, position.Column] = true;
+                if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
+                {
+                    break;
+                }
+
+                position.Column--;
+            }
+
+            //// Left
+            //position.SetValues(Position.Row, Position.Column + 1);
+            //while (Board.ValidPosition(position) && CanMove(position))
+            //{
+            //    matrix[position.Row, position.Column] = true;
+            //    if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
+            //    {
+            //        break;
+            //    }
+
+            //    position.Column++;
+            //}
+
 
             return matrix;
         }
