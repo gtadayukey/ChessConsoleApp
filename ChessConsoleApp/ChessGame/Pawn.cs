@@ -66,14 +66,18 @@ namespace ChessGame
                 }
             }
 
-            for(int i = -1; i < 2; i += 2)
-            {
-                position.SetValues(Position.Row + positionsToValidate[0], Position.Column + i);
+            position.SetValues(Position.Row + positionsToValidate[0], Position.Column + 1);
 
-                if (CanEat(position))
-                {
-                    matrix[position.Row, position.Column] = true;
-                }
+            if (CanEat(position))
+            {
+                matrix[position.Row, position.Column] = true;
+            }
+
+            position.SetValues(Position.Row + positionsToValidate[0], Position.Column - 1);
+
+            if (CanEat(position))
+            {
+                matrix[position.Row, position.Column] = true;
             }
 
             return matrix;

@@ -76,12 +76,12 @@ namespace ChessConsoleApp
             }
         }
 
-        public static ChessPosition ReadChessPosition()
+        public static ChessLabel ReadChessPosition()
         {
             string s = Console.ReadLine();
             char column = s[0];
             int row = int.Parse(s[1] + "");
-            return new ChessPosition(column, row);
+            return new ChessLabel(column, row);
         }
     }
 }

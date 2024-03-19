@@ -2,12 +2,12 @@
 
 namespace ChessConsoleApp.ChessGame
 {
-    internal class ChessPosition
+    internal class ChessLabel
     {
         public char Column { get; set; }
         public int Row { get; set; }
 
-        public ChessPosition(char column, int row)
+        public ChessLabel(char column, int row)
         {
             Column = column;
             Row = row;
