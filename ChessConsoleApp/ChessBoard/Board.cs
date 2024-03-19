@@ -58,7 +58,7 @@ namespace ChessBoard
 
         public bool ValidPosition(Position position)
         {
-            if(position.Row < 0 || position.Column < 0 || position.Row > Rows || position.Column > Columns)
+            if(position.Row < 0 || position.Column < 0 || position.Row >= Rows || position.Column >= Columns)
             {
                 return false;
             }

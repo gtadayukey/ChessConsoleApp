@@ -31,8 +31,9 @@ namespace ChessConsoleApp.ChessGame
 
         private void BuildBoardSetup()
         {
-
-            Board.PlacePiece(new Tower(Board, ChessColor.White), new ChessPosition('d', 2).ToPosition());
+            Board.PlacePiece(new Tower(Board, ChessColor.White), new ChessPosition('c', 4).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessPosition('c', 6).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.Black), new ChessPosition('c', 2).ToPosition());
 
             //Board.PlacePiece(new Tower(Board, ChessColor.White), new ChessPosition('a', 1).ToPosition());
             //Board.PlacePiece(new Horse(Board, ChessColor.White), new ChessPosition('b', 1).ToPosition());

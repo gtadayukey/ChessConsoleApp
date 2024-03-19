@@ -14,10 +14,10 @@ namespace ChessGame
 
         private bool CanMove(Position position)
         {
-            Piece piece = Board.Piece(position);
-            if (piece == null || piece.Color != Color)
+            if (Board.ValidPosition(position))
             {
-                return true;
+                Piece piece = Board.Piece(position);
+                return piece == null || piece.Color != Color;
             }
 
             return false;
@@ -30,7 +30,8 @@ namespace ChessGame
 
             // Top
             position.SetValues(Position.Row - 1, Position.Column);
-            while (Board.ValidPosition(position) && CanMove(position))
+
+            while (CanMove(position))
             {
                 matrix[position.Row, position.Column] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
@@ -41,22 +42,24 @@ namespace ChessGame
                 position.Row--;
             }
 
-            //// Bottom
-            //position.SetValues(Position.Row + 1, Position.Column);
-            //while (Board.ValidPosition(position) && CanMove(position))
-            //{
-            //    matrix[position.Row, position.Column] = true;
-            //    if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
-            //    {
-            //        break;
-            //    }
 
-            //    position.Row++;
-            //}
+            // Bottom
+            position.SetValues(Position.Row + 1, Position.Column);
+
+            while (CanMove(position))
+            {
+                matrix[position.Row, position.Column] = true;
+                if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
+                {
+                    break;
+                }
+
+                position.Row++;
+            }
 
             // Right
             position.SetValues(Position.Row, Position.Column - 1);
-            while (Board.ValidPosition(position) && CanMove(position))
+            while (CanMove(position))
             {
                 matrix[position.Row, position.Column] = true;
                 if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
@@ -67,18 +70,18 @@ namespace ChessGame
                 position.Column--;
             }
 
-            //// Left
-            //position.SetValues(Position.Row, Position.Column + 1);
-            //while (Board.ValidPosition(position) && CanMove(position))
-            //{
-            //    matrix[position.Row, position.Column] = true;
-            //    if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
-            //    {
-            //        break;
-            //    }
+            // Left
+            position.SetValues(Position.Row, Position.Column + 1);
+            while (CanMove(position))
+            {
+                matrix[position.Row, position.Column] = true;
+                if (Board.Piece(position) != null && Board.Piece(position).Color != Color)
+                {
+                    break;
+                }
 
-            //    position.Column++;
-            //}
+                position.Column++;
+            }
 
 
             return matrix;

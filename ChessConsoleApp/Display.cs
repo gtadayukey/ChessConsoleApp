@@ -45,10 +45,11 @@ namespace ChessConsoleApp
 
                     PrintPiece(board.Piece(i, j));
                 }
+                Console.BackgroundColor = originalBackground;
+
                 Console.Write("  " + (8 - i) + "\n");
             }
             Console.WriteLine("\n    a b c d e f g h");
-            Console.BackgroundColor = originalBackground;
         }
 
         public static void PrintPiece(Piece piece)

@@ -14,8 +14,13 @@ namespace ChessGame
 
         private bool CanMove(Position position)
         {
-            Piece piece = Board.Piece(position);
-            return piece == null || piece.Color != Color;
+            if (Board.ValidPosition(position))
+            {
+                Piece piece = Board.Piece(position);
+                return piece == null || piece.Color != Color;
+            }
+
+            return false;
         }
 
         public override bool[,] PossibleMovement()
@@ -31,7 +36,7 @@ namespace ChessGame
                                            { 0, -1 },
                                            { 1, 0 },
                                            { 1, 1 },
-                                           { 1, -1 },
+                                           { 1, -1 }
             };
 
             for (int i = 0; i < positionsToValidate.GetLength(0); i++)
@@ -40,7 +45,9 @@ namespace ChessGame
                 int collumnPoint = positionsToValidate[i, 1];
                 position.SetValues(Position.Row + rowPoint, Position.Column + collumnPoint);
 
-                if (Board.ValidPosition(position) && CanMove(position))
+                Console.WriteLine(CanMove(position));
+
+                if (CanMove(position))
                 {
                     matrix[position.Row, position.Column] = true;
                 }
