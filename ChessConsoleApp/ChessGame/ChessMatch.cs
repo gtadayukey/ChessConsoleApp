@@ -43,6 +43,8 @@ namespace ChessConsoleApp.ChessGame
 
         public void ValidateOriginPosition(Position origin)
         {
+            Board.ValidatePosition(origin);
+
             if (Board.Piece(origin) == null)
             {
                 throw new BoardException("Doesn't have a piece here!");
@@ -60,6 +62,8 @@ namespace ChessConsoleApp.ChessGame
 
         public void ValidateDestinyPosition(Position origin, Position destiny)
         {
+            Board.ValidatePosition(destiny);
+
             bool[,] matrix = Board.Piece(origin).PossibleMovement();
 
             if (matrix[destiny.Row, destiny.Column] == false)
@@ -69,7 +73,7 @@ namespace ChessConsoleApp.ChessGame
 
             if (Board.ExistPiece(destiny) && CurrentPlayer == Board.Piece(destiny).Color)
             {
-                throw new BoardException("Can't eat your own piece!");
+                throw new BoardException("Can't move to your own piece!");
             }
         }
 

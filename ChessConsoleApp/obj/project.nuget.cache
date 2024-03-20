@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i+VtY9Y1cm1C+GLlhRO/MNbfO2IkND0yMcvQikLiM/iTMGjIsBYMN9Wx4LB/tDIa10pDR7pw6+LksvrtKJ1NRQ==",
+  "dgSpecHash": "iZgB8vAXl1aU49sYjTAjc9eQi9RMxZcBP7Sd91N1aCGU4E7G3tgZeDM8NDG3OMSeefIvaBgoMqOrStn3Yu4xvA==",
   "success": true,
-  "projectFilePath": "D:\\Estudos Backend\\C#\\ProgramasOO\\ChessConsoleApp\\ChessConsoleApp\\ChessConsoleApp.csproj",
+  "projectFilePath": "C:\\C#\\Estudos\\ChessConsoleApp\\ChessConsoleApp\\ChessConsoleApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

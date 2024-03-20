@@ -17,7 +17,7 @@ try
             Console.WriteLine($"Waiting for {match.CurrentPlayer} to play");
 
             Console.Write("\nOrigin: ");
-            Position origin = Display.ReadChessPosition().ToPosition();
+            Position origin = Display.ReadChessLabel().ToPosition();
 
             match.ValidateOriginPosition(origin);
 
@@ -27,7 +27,7 @@ try
             Display.PrintBoard(match.Board, possibleMovement);
 
             Console.Write("\nDestiny: ");
-            Position destiny = Display.ReadChessPosition().ToPosition();
+            Position destiny = Display.ReadChessLabel().ToPosition();
 
             match.ValidateDestinyPosition(origin, destiny);
 
@@ -39,10 +39,6 @@ try
             Console.ReadLine();
         }
     }
-}
-catch (FormatException e)
-{
-    Console.WriteLine(e.Message);
 }
 catch (Exception e)
 {

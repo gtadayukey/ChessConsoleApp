@@ -1,6 +1,8 @@
 ﻿using ChessBoard;
 using ChessBoard.Enums;
+using ChessBoard.Exceptions;
 using ChessConsoleApp.ChessGame;
+using System.Text.RegularExpressions;
 
 namespace ChessConsoleApp
 {
@@ -76,11 +78,13 @@ namespace ChessConsoleApp
             }
         }
 
-        public static ChessLabel ReadChessPosition()
+        public static ChessLabel ReadChessLabel()
         {
-            string s = Console.ReadLine();
-            char column = s[0];
-            int row = int.Parse(s[1] + "");
+            string input = Console.ReadLine();
+
+            char column = input[0];
+            int row = int.Parse(input[1] + "");
+
             return new ChessLabel(column, row);
         }
     }
