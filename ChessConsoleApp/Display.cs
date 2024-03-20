@@ -54,6 +54,38 @@ namespace ChessConsoleApp
             Console.WriteLine("\n    a b c d e f g h");
         }
 
+        public static void PrintMatch(ChessMatch match)
+        {
+            PrintBoard(match.Board);
+            Console.WriteLine();
+            PrintCapturedPieces(match);
+            Console.WriteLine($"\nTurn: {match.Turn}");
+            Console.WriteLine($"Waiting for {match.CurrentPlayer} to play");
+        }
+
+        public static void PrintCapturedPieces(ChessMatch match)
+        {
+            Console.WriteLine("Captured pieces:");
+            Console.Write("White: ");
+            PrintSet(match.PiecesCaptured(ChessColor.White));
+            Console.Write("\nBlack: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            PrintSet(match.PiecesCaptured(ChessColor.Black));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
+        }
+
+        public static void PrintSet(HashSet<Piece> set)
+        {
+            Console.WriteLine("[");
+            foreach(Piece piece in set)
+            {
+                Console.WriteLine($"{piece} ");
+            }
+            Console.WriteLine("]");
+        }
+
         public static void PrintPiece(Piece piece)
         {
 

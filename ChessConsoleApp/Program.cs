@@ -12,9 +12,7 @@ try
         try
         {
             Console.Clear();
-            Display.PrintBoard(match.Board);
-            Console.WriteLine($"\nTurn: {match.Turn}");
-            Console.WriteLine($"Waiting for {match.CurrentPlayer} to play");
+            Display.PrintMatch();
 
             Console.Write("\nOrigin: ");
             Position origin = Display.ReadChessLabel().ToPosition();
