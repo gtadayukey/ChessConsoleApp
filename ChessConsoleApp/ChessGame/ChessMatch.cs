@@ -1,32 +1,84 @@
 ﻿using ChessBoard;
 using ChessBoard.Enums;
+using ChessBoard.Exceptions;
 using ChessGame;
 using System.Drawing;
+using System.Numerics;
 
 namespace ChessConsoleApp.ChessGame
 {
     internal class ChessMatch
     {
         public Board Board { get; private set; }
-        private int Turn { get; set; }
-        private ChessColor Color { get; set; }
+        public int Turn { get; private set; }
+        public ChessColor CurrentPlayer { get; private set; }
         public bool Finished { get; private set; }
 
         public ChessMatch()
         {
             Board = new Board(8, 8);
             Turn = 1;
-            Color = ChessColor.White;
+            CurrentPlayer = ChessColor.White;
             Finished = false;
             BuildBoardSetup();
         }
 
-        public void ExecuteMovement(Position origin, Position destiny)
+        private void ChangePlayer()
+        {
+            if (CurrentPlayer == ChessColor.White)
+            {
+                CurrentPlayer = ChessColor.Black;
+                return;
+            }
+
+            CurrentPlayer = ChessColor.White;
+        }
+
+        public void Play(Position origin, Position destiny)
+        {
+            ExecuteMovement(origin, destiny);
+            Turn++;
+            ChangePlayer();
+        }
+
+        public void ValidateOriginPosition(Position origin)
+        {
+            if (Board.Piece(origin) == null)
+            {
+                throw new BoardException("Doesn't have a piece here!");
+            }
+            if (CurrentPlayer != Board.Piece(origin).Color)
+            {
+                throw new BoardException("The origin piece isn't yours!");
+            }
+            if (!Board.Piece(origin).HavePossibleMovement())
+            {
+                throw new BoardException("This piece doesn't have any possible moves!");
+
+            }
+        }
+
+        public void ValidateDestinyPosition(Position origin, Position destiny)
+        {
+            bool[,] matrix = Board.Piece(origin).PossibleMovement();
+
+            if (matrix[destiny.Row, destiny.Column] == false)
+            {
+                throw new BoardException("This piece can't move here!");
+            }
+
+            if (Board.ExistPiece(destiny) && CurrentPlayer == Board.Piece(destiny).Color)
+            {
+                throw new BoardException("Can't eat your own piece!");
+            }
+        }
+
+        private void ExecuteMovement(Position origin, Position destiny)
         {
             Piece piece = Board.RemovePiece(origin);
             piece.AddMovementAmount();
             Board.RemovePiece(destiny);
-            Board.PlacePiece(piece, destiny);   
+            Board.PlacePiece(piece, destiny);
         }
 
         private void BuildBoardSetup()
@@ -43,7 +95,7 @@ namespace ChessConsoleApp.ChessGame
             Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('a', 2).ToPosition());
             Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('b', 2).ToPosition());
             Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('c', 2).ToPosition());
-            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel  ('d', 2).ToPosition());
+            Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('d', 2).ToPosition());
             Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('e', 2).ToPosition());
             Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('f', 2).ToPosition());
             Board.PlacePiece(new Pawn(Board, ChessColor.White), new ChessLabel('g', 2).ToPosition());

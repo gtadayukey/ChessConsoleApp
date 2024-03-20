@@ -29,10 +29,10 @@ namespace ChessGame
             Position position = new(0, 0);
 
             int[,] positionsToValidate = {
-                                           { -1, 0},
-                                           { 1, 0},
-                                           { 0, -1},
-                                           { 0, 1}
+                                           { -1, 0 },
+                                           { 1, 0 },
+                                           { 0, -1 },
+                                           { 0, 1 }
             };
 
             for (int i = 0; i < positionsToValidate.GetLength(0); i++)

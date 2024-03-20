@@ -9,33 +9,42 @@ try
 
     while (!match.Finished)
     {
-        Console.Clear();
-        Display.PrintBoard(match.Board);
+        try
+        {
+            Console.Clear();
+            Display.PrintBoard(match.Board);
+            Console.WriteLine($"\nTurn: {match.Turn}");
+            Console.WriteLine($"Waiting for {match.CurrentPlayer} to play");
 
-        Console.Write("\nOrigin: ");
-        Position origin = Display.ReadChessPosition().ToPosition();
+            Console.Write("\nOrigin: ");
+            Position origin = Display.ReadChessPosition().ToPosition();
 
-        bool[,] possibleMovement = match.Board.Piece(origin).PossibleMovement();
+            match.ValidateOriginPosition(origin);
 
-        Console.Clear();
-        Display.PrintBoard(match.Board, possibleMovement);
+            bool[,] possibleMovement = match.Board.Piece(origin).PossibleMovement();
 
-        Console.Write("\nDestiny: ");
-        Position destiny = Display.ReadChessPosition().ToPosition();
+            Console.Clear();
+            Display.PrintBoard(match.Board, possibleMovement);
 
-        match.ExecuteMovement(origin, destiny);
+            Console.Write("\nDestiny: ");
+            Position destiny = Display.ReadChessPosition().ToPosition();
+
+            match.ValidateDestinyPosition(origin, destiny);
+
+            match.Play(origin, destiny);
+        }
+        catch (BoardException e)
+        { 
+            Console.WriteLine(e.Message);
+            Console.ReadLine();
+        }
     }
-
 }
-catch(BoardException e)
-{
-    Console.WriteLine(e.Message);
-} 
-catch(FormatException e)
+catch (FormatException e)
 {
     Console.WriteLine(e.Message);
 }
-catch(Exception e)
+catch (Exception e)
 {
     Console.WriteLine(e.Message);
 }

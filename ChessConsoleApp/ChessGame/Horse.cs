@@ -41,9 +41,7 @@ namespace ChessGame
 
             for (int i = 0; i < positionsToValidate.GetLength(0); i++)
             {
-                int rowPoint = positionsToValidate[i, 0];
-                int collumnPoint = positionsToValidate[i, 1];
-                position.SetValues(Position.Row + rowPoint, Position.Column + collumnPoint);
+                position.SetValues(Position.Row + positionsToValidate[i, 0], Position.Column + positionsToValidate[i, 1]);
 
                 if (CanMove(position))
                 {
