@@ -23,7 +23,7 @@ namespace ChessGame
             return false;
         }
 
-        public override bool[,] PossibleMovement()
+        public override bool[,] PossibleMovements()
         {
             bool[,] matrix = new bool[Board.Rows, Board.Columns];
             Position position = new(0, 0);

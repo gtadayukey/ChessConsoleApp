@@ -19,7 +19,7 @@ try
 
             match.ValidateOriginPosition(origin);
 
-            bool[,] possibleMovement = match.Board.Piece(origin).PossibleMovement();
+            bool[,] possibleMovement = match.Board.Piece(origin).PossibleMovements();
 
             Console.Clear();
             Display.PrintBoard(match.Board, possibleMovement);

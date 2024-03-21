@@ -29,7 +29,7 @@ namespace ChessBoard
 
         public bool HavePossibleMovement()
         {
-            bool[,] matrix = PossibleMovement();
+            bool[,] matrix = PossibleMovements();
             for (int i = 0; i < Board.Rows; i++)
             {
                 for (int j = 0; j < Board.Columns; j++)
@@ -44,11 +44,11 @@ namespace ChessBoard
             return false;
         }
 
-        public bool CanMoveTo(Position position)
+        public bool PossibleMovement(Position position)
         {
-            return PossibleMovement()[position.Row, position.Column];
+            return PossibleMovements()[position.Row, position.Column];
         }
 
-        public abstract bool[,] PossibleMovement();
+        public abstract bool[,] PossibleMovements();
     }
 }

@@ -108,7 +108,7 @@ namespace ChessConsoleApp.ChessGame
         {
             Board.ValidatePosition(destiny);
 
-            if (!Board.Piece(origin).CanMoveTo(destiny))
+            if (!Board.Piece(origin).PossibleMovement(destiny))
             {
                 throw new BoardException("Invalid destiny position!");
             }
@@ -201,7 +201,7 @@ namespace ChessConsoleApp.ChessGame
 
             foreach (Piece x in PiecesInGame(Opponent(color)))
             {
-                bool[,] matrix = x.PossibleMovement();
+                bool[,] matrix = x.PossibleMovements();
                 if (matrix[king.Position.Row, king.Position.Column])
                 {
                     return true;
@@ -220,7 +220,7 @@ namespace ChessConsoleApp.ChessGame
 
             foreach (Piece x in PiecesInGame(color))
             {
-                bool[,] matrix = x.PossibleMovement();
+                bool[,] matrix = x.PossibleMovements();
                 for (int i = 0; i < Board.Rows; i++)
                 {
                     for (int j = 0; j < Board.Columns; j++)
