@@ -2,46 +2,44 @@
 using ChessDisplay;
 using ChessGame;
 
-try
-{
-    ChessMatch match = new();
 
-    while (!match.Finished)
+ChessMatch match = new();
+
+while (!match.Finished)
+{
+    try
     {
-        try
-        {
-            Console.Clear();
-            Display.PrintMatch(match);
+        Console.Clear();
+        Display.PrintMatch(match);
 
-            Console.Write("\nOrigin: ");
-            Position origin = Display.ReadChessLabel().ToPosition();
+        Console.Write("\nOrigin: ");
+        Position origin = Display.ReadChessLabel().ToPosition();
 
-            match.ValidateOriginPosition(origin);
+        match.ValidateOriginPosition(origin);
 
-            bool[,] possibleMovement = match.Board.Piece(origin).PossibleMovements();
+        bool[,] possibleMovement = match.Board.Piece(origin).PossibleMovements();
 
-            Console.Clear();
-            Display.PrintBoard(match.Board, possibleMovement);
+        Console.Clear();
+        Display.PrintBoard(match.Board, possibleMovement);
 
-            Console.Write("\nDestiny: ");
-            Position destiny = Display.ReadChessLabel().ToPosition();
+        Console.Write("\nDestiny: ");
+        Position destiny = Display.ReadChessLabel().ToPosition();
 
-            match.ValidateDestinyPosition(origin, destiny);
+        match.ValidateDestinyPosition(origin, destiny);
 
-            match.Play(origin, destiny);
-        }
-        catch (BoardException e)
-        { 
-            Console.WriteLine(e.Message);
-            Console.ReadLine();
-        }
+        match.Play(origin, destiny);
     }
+    catch (BoardException e)
+    { 
+        Console.WriteLine(e.Message);
+        Console.ReadLine();
+    }
+    catch (Exception)
+    {
+        Console.ReadLine();
+    }
+}
 
-    Console.Clear();
-    Display.PrintMatch(match);
-}
-catch (Exception e)
-{
-    Console.WriteLine(e.Message);
-}
+Console.Clear();
+Display.PrintMatch(match);
 
