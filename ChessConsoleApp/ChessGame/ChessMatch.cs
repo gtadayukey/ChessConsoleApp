@@ -13,6 +13,7 @@ namespace ChessConsoleApp.ChessGame
         public int Turn { get; private set; }
         public ChessColor CurrentPlayer { get; private set; }
         public bool Finished { get; private set; }
+        public bool Check { get; private set; }
         private readonly HashSet<Piece> Pieces;
         private readonly HashSet<Piece> CapturedPieces;
 
@@ -22,6 +23,7 @@ namespace ChessConsoleApp.ChessGame
             Turn = 1;
             CurrentPlayer = ChessColor.White;
             Finished = false;
+            Check = false;
             Pieces = new HashSet<Piece>();
             CapturedPieces = new HashSet<Piece>();
             BuildBoardSetup();
@@ -40,9 +42,38 @@ namespace ChessConsoleApp.ChessGame
 
         public void Play(Position origin, Position destiny)
         {
-            ExecuteMovement(origin, destiny);
+            Piece capturedPiece = ExecuteMovement(origin, destiny);
+
+            if(IsInCheck(CurrentPlayer))
+            {
+                UndoPlay(origin, destiny, capturedPiece);
+                throw new BoardException("You can't put yourself in check!");
+            }
+
+            if (IsInCheck(Opponent(CurrentPlayer)))
+            {
+                Check = true;
+            }
+            else
+            {
+                Check = false;
+            }
             Turn++;
             ChangePlayer();
+        }
+
+        private void UndoPlay(Position origin, Position destiny, Piece capturedPiece)
+        {
+            Piece piece = Board.RemovePiece(destiny);
+            piece.RemoveMovementAmount();
+            if (capturedPiece != null)
+            {
+                Board.PlacePiece(capturedPiece, destiny);
+                CapturedPieces.Remove(capturedPiece);
+            }
+
+            Board.PlacePiece(piece, origin);
+
         }
 
         public void ValidateOriginPosition(Position origin)
@@ -79,7 +110,7 @@ namespace ChessConsoleApp.ChessGame
             }
         }
 
-        private void ExecuteMovement(Position origin, Position destiny)
+        private Piece ExecuteMovement(Position origin, Position destiny)
         {
             Piece piece = Board.RemovePiece(origin);
             piece.AddMovementAmount();
@@ -90,6 +121,8 @@ namespace ChessConsoleApp.ChessGame
             {
                 CapturedPieces.Add(capturedPiece);
             }
+
+            return capturedPiece;
         }
 
         public HashSet<Piece> PiecesCaptured(ChessColor color)
@@ -111,7 +144,7 @@ namespace ChessConsoleApp.ChessGame
         {
             HashSet<Piece> aux = new();
 
-            foreach (Piece x in CapturedPieces)
+            foreach (Piece x in Pieces)
             {
                 if (x.Color == color)
                 {
@@ -122,6 +155,51 @@ namespace ChessConsoleApp.ChessGame
             aux.ExceptWith(PiecesCaptured(color));
 
             return aux;
+        }
+
+        private ChessColor Opponent(ChessColor color)
+        {
+            if(color == ChessColor.White)
+            {
+                return ChessColor.Black;
+            }
+
+            return ChessColor.White;
+        }
+
+        private Piece King(ChessColor color)
+        {
+            foreach(Piece x in PiecesInGame(color))
+            {
+                if (x is King)
+                {
+                    return x;
+                }
+            }
+
+            return null;
+        }
+
+        public bool IsInCheck(ChessColor color)
+        {
+
+            Piece king = King(color);
+
+            if(king == null)
+            {
+                throw new BoardException($"Does't have a {color} King!");
+            }
+
+            foreach(Piece x in PiecesInGame(Opponent(color)))
+            {
+                bool[,] matrix = x.PossibleMovement();
+                if (matrix[king.Position.Row, king.Position.Column])
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void PlaceNewPiece(char column, int row, Piece piece)
@@ -149,7 +227,7 @@ namespace ChessConsoleApp.ChessGame
             PlaceNewPiece('f', 2, new Pawn(Board, ChessColor.White));
             PlaceNewPiece('g', 2, new Pawn(Board, ChessColor.White));
             PlaceNewPiece('h', 2, new Pawn(Board, ChessColor.White));
-            
+
             PlaceNewPiece('a', 8, new Tower(Board, ChessColor.Black));
             PlaceNewPiece('b', 8, new Horse(Board, ChessColor.Black));
             PlaceNewPiece('c', 8, new Bishop(Board, ChessColor.Black));

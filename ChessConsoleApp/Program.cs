@@ -12,7 +12,7 @@ try
         try
         {
             Console.Clear();
-            Display.PrintMatch();
+            Display.PrintMatch(match);
 
             Console.Write("\nOrigin: ");
             Position origin = Display.ReadChessLabel().ToPosition();

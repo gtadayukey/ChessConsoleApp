@@ -5,7 +5,7 @@ namespace ChessBoard
 {
     internal abstract class Piece
     {
-        public Position? Position { get; set; }
+        public Position Position { get; set; }
         public ChessColor Color { get; protected set; }
         public int MovementAmount { get; protected set; }
         public Board Board { get; protected set; }
@@ -21,6 +21,10 @@ namespace ChessBoard
         public void AddMovementAmount()
         {
             MovementAmount++;
+        }
+        public void RemoveMovementAmount()
+        {
+            MovementAmount--;
         }
 
         public bool HavePossibleMovement()

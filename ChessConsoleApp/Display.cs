@@ -1,13 +1,25 @@
 ﻿using ChessBoard;
 using ChessBoard.Enums;
-using ChessBoard.Exceptions;
 using ChessConsoleApp.ChessGame;
-using System.Text.RegularExpressions;
+
 
 namespace ChessConsoleApp
 {
     class Display
     {
+        public static void PrintMatch(ChessMatch match)
+        {
+            PrintBoard(match.Board);
+            Console.WriteLine();
+            PrintCapturedPieces(match);
+            Console.WriteLine($"\nTurn: {match.Turn}");
+            Console.WriteLine($"Waiting for {match.CurrentPlayer} to play");
+            if (match.Check)
+            {
+                Console.WriteLine("CHECK !");
+            }
+        }
+
         public static void PrintBoard(Board board)
         {
             Console.WriteLine("    a b c d e f g h\n");
@@ -54,14 +66,6 @@ namespace ChessConsoleApp
             Console.WriteLine("\n    a b c d e f g h");
         }
 
-        public static void PrintMatch(ChessMatch match)
-        {
-            PrintBoard(match.Board);
-            Console.WriteLine();
-            PrintCapturedPieces(match);
-            Console.WriteLine($"\nTurn: {match.Turn}");
-            Console.WriteLine($"Waiting for {match.CurrentPlayer} to play");
-        }
 
         public static void PrintCapturedPieces(ChessMatch match)
         {
@@ -78,12 +82,12 @@ namespace ChessConsoleApp
 
         public static void PrintSet(HashSet<Piece> set)
         {
-            Console.WriteLine("[");
+            Console.Write("[ ");
             foreach(Piece piece in set)
             {
-                Console.WriteLine($"{piece} ");
+                Console.Write($"{piece} ");
             }
-            Console.WriteLine("]");
+            Console.Write("]");
         }
 
         public static void PrintPiece(Piece piece)
