@@ -37,6 +37,9 @@ try
             Console.ReadLine();
         }
     }
+
+    Console.Clear();
+    Display.PrintMatch(match);
 }
 catch (Exception e)
 {
