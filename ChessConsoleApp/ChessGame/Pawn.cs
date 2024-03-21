@@ -55,14 +55,14 @@ namespace ChessGame
             if(CanMove(position))
             {
                 matrix[position.Row, position.Column] = true;
-            }
 
-            if (MovementAmount == 0)
-            {
-                position.SetValues(Position.Row + positionsToValidate[1], Position.Column);
-                if (CanMove(position))
+                if (MovementAmount == 0)
                 {
-                    matrix[position.Row, position.Column] = true;
+                    position.SetValues(Position.Row + positionsToValidate[1], Position.Column);
+                    if (CanMove(position))
+                    {
+                        matrix[position.Row, position.Column] = true;
+                    }
                 }
             }
 

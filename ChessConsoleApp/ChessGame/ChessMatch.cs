@@ -253,8 +253,8 @@ namespace ChessConsoleApp.ChessGame
         private void BuildBoardSetup()
         {
 
-            PlaceNewPiece('b', 1, new Tower(Board, ChessColor.White));
-            PlaceNewPiece('b', 2, new Tower(Board, ChessColor.White));
+            PlaceNewPiece('b', 4, new Pawn(Board, ChessColor.White));
+            PlaceNewPiece('b', 5, new Pawn(Board, ChessColor.Black));
             PlaceNewPiece('d', 1, new King(Board, ChessColor.White));
             PlaceNewPiece('a', 8, new King(Board, ChessColor.Black));
 
