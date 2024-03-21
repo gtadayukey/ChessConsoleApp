@@ -1,12 +1,10 @@
 ﻿using ChessBoard;
-using ChessBoard.Enums;
-using ChessConsoleApp.ChessGame;
 
 namespace ChessGame
 {
     internal class King : Piece
     {
-        private ChessMatch Match;
+        private readonly ChessMatch Match;
 
         public King(Board board, ChessColor color, ChessMatch match) : base(board, color)
         {
@@ -29,10 +27,10 @@ namespace ChessGame
             return false;
         }
 
-        private bool TestTowerRook(Position position)
+        private bool TestHookCastling(Position position)
         {
             Piece piece = Board.Piece(position);
-            return piece is Tower && MovementAmount == 0;
+            return piece is Hook && MovementAmount == 0;
         }
 
         public override bool[,] PossibleMovements()
@@ -63,28 +61,28 @@ namespace ChessGame
 
             if (MovementAmount == 0 && !Match.Check)
             {
-                // Normal Rook
-                Position towerPosition1 = new(Position.Row, Position.Column - 4);
-                if (TestTowerRook(towerPosition1))
+                // Long Castling
+                Position hookPosition1 = new(Position.Row, Position.Column - 4);
+                if (TestHookCastling(hookPosition1))
                 {
                     Position p1 = new(Position.Row, Position.Column - 1);
                     Position p2 = new(Position.Row, Position.Column - 2);
                     Position p3 = new(Position.Row, Position.Column - 3);
 
-                    if (Board.Piece(p1) == null && Board.Piece(p2) == null && Board.Piece(p3) == null)
+                    if (Board.Piece(p1) == null && Board.Piece(p2) == null && Board.Piece(p3) == null && !Match.IsThreatenedPosition(p1, Color))
                     {
                         matrix[Position.Row, Position.Column - 2] = true;
                     }
                 }
 
-                // Short Rook
-                Position towerPosition2 = new(Position.Row, Position.Column + 3);
-                if (TestTowerRook(towerPosition2))
+                // Short Castling
+                Position hookPosition2 = new(Position.Row, Position.Column + 3);
+                if (TestHookCastling(hookPosition2))
                 {
                     Position p1 = new(Position.Row, Position.Column + 1);
                     Position p2 = new(Position.Row, Position.Column + 2);
 
-                    if (Board.Piece(p1) == null && Board.Piece(p2) == null)
+                    if (Board.Piece(p1) == null && Board.Piece(p2) == null && !Match.IsThreatenedPosition(p1, Color))
                     {
                         matrix[Position.Row, Position.Column + 2] = true;
                     }

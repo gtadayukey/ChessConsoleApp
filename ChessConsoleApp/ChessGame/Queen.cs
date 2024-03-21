@@ -1,5 +1,4 @@
 ﻿using ChessBoard;
-using ChessBoard.Enums;
 
 namespace ChessGame
 {

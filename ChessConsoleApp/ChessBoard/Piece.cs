@@ -1,7 +1,4 @@
-﻿using ChessBoard.Enums;
-using System.Drawing;
-
-namespace ChessBoard
+﻿namespace ChessBoard
 {
     internal abstract class Piece
     {
@@ -22,7 +19,7 @@ namespace ChessBoard
         {
             MovementAmount++;
         }
-        public void RemoveMovementAmount()
+        public void DecreaseMovementAmount()
         {
             MovementAmount--;
         }

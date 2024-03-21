@@ -1,6 +1,6 @@
 ﻿using ChessBoard;
 
-namespace ChessConsoleApp.ChessGame
+namespace ChessGame
 {
     internal class ChessLabel
     {

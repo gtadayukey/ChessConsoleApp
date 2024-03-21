@@ -1,7 +1,6 @@
 ﻿using ChessBoard;
-using ChessBoard.Exceptions;
-using ChessConsoleApp;
-using ChessConsoleApp.ChessGame;
+using ChessDisplay;
+using ChessGame;
 
 try
 {

@@ -1,11 +1,10 @@
 ﻿using ChessBoard;
-using ChessBoard.Enums;
 
 namespace ChessGame
 {
-    internal class Tower : Piece
+    internal class Hook : Piece
     {
-        public Tower(Board board, ChessColor color) : base(board, color) { }
+        public Hook(Board board, ChessColor color) : base(board, color) { }
 
         public override string ToString()
         {

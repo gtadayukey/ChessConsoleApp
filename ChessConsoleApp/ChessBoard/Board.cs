@@ -1,6 +1,4 @@
-﻿using ChessBoard.Exceptions;
-
-namespace ChessBoard
+﻿namespace ChessBoard
 {
     internal class Board
     {

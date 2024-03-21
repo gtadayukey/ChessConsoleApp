@@ -1,9 +1,8 @@
 ﻿using ChessBoard;
-using ChessBoard.Enums;
-using ChessConsoleApp.ChessGame;
+using ChessGame;
 
 
-namespace ChessConsoleApp
+namespace ChessDisplay
 {
     class Display
     {
@@ -34,7 +33,7 @@ namespace ChessConsoleApp
 
             for (int i = 0; i < board.Rows; i++)
             {
-                Console.Write((8 - i) + "   ");
+                Console.Write(8 - i + "   ");
                 for (int j = 0; j < board.Columns; j++)
                 {
                     PrintPiece(board.Piece(i, j));
@@ -53,7 +52,7 @@ namespace ChessConsoleApp
 
             for (int i = 0; i < board.Rows; i++)
             {
-                Console.Write((8 - i) + "   ");
+                Console.Write(8 - i + "   ");
                 for (int j = 0; j < board.Columns; j++)
                 {
                     if (possibleMovement[i, j] == true)
@@ -91,7 +90,7 @@ namespace ChessConsoleApp
         public static void PrintSet(HashSet<Piece> set)
         {
             Console.Write("[ ");
-            foreach(Piece piece in set)
+            foreach (Piece piece in set)
             {
                 Console.Write($"{piece} ");
             }
