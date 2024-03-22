@@ -14,7 +14,6 @@ namespace ChessGame
         private readonly HashSet<Piece> Pieces;
         private readonly HashSet<Piece> CapturedPieces;
         public Piece? VulnerableEnPassant { get; private set; }
-        public bool Promotion { get; private set; }
         public Piece PromotionPiece { get; private set; }
 
         public ChessMatch()
@@ -27,7 +26,6 @@ namespace ChessGame
             Pieces = new HashSet<Piece>();
             CapturedPieces = new HashSet<Piece>();
             VulnerableEnPassant = null;
-            Promotion = false;
             PromotionPiece = new Queen(Board, CurrentPlayer);
 
             BuildBoardSetup();
@@ -60,13 +58,7 @@ namespace ChessGame
 
             if (piece is Pawn && ((piece.Color == ChessColor.White && destiny.Row == 0) || (piece.Color == ChessColor.Black && destiny.Row == 7)))
             {
-                char pieceLabel = Display.ReadPromotion();
-
-                ExecutePromotion(pieceLabel, destiny);
-            }
-            else
-            {
-                Promotion = false;
+                ExecutePromotion(destiny);
             }
 
             // Check 
@@ -249,8 +241,10 @@ namespace ChessGame
             return capturedPiece;
         }
 
-        public void ExecutePromotion(char pieceLabel, Position destiny)
+        private void ExecutePromotion(Position destiny)
         {
+            char pieceLabel = Display.ReadPromotion();
+
             Piece piece = Board.RemovePiece(destiny);
             Pieces.Remove(piece);
 
