@@ -12,10 +12,10 @@ This Chess Console App is a fully functional and playable implementation of the 
 
 ## How to Play
 
-Clone the repository to your local machine.
-Build the solution using your preferred C# development environment.
-Run the application.
-Follow the on-screen instructions to start and play the game.
+1. Clone the repository to your local machine.
+2. Build the solution using your preferred C# development environment.
+3. Run the application.
+4. Follow the on-screen instructions to start and play the game.
 
 ## Future Implementations
 
