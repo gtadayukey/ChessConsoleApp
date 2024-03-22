@@ -1,4 +1,5 @@
 ﻿using ChessBoard;
+using ChessDisplay;
 using System.Net.NetworkInformation;
 
 namespace ChessGame
@@ -13,6 +14,8 @@ namespace ChessGame
         private readonly HashSet<Piece> Pieces;
         private readonly HashSet<Piece> CapturedPieces;
         public Piece? VulnerableEnPassant { get; private set; }
+        public bool Promotion { get; private set; }
+        public Piece PromotionPiece { get; private set; }
 
         public ChessMatch()
         {
@@ -24,6 +27,9 @@ namespace ChessGame
             Pieces = new HashSet<Piece>();
             CapturedPieces = new HashSet<Piece>();
             VulnerableEnPassant = null;
+            Promotion = false;
+            PromotionPiece = new Queen(Board, CurrentPlayer);
+
             BuildBoardSetup();
         }
 
@@ -48,6 +54,23 @@ namespace ChessGame
                 throw new BoardException("You can't put yourself in check!");
             }
 
+            Piece piece = Board.Piece(destiny);
+
+            // Promotion
+
+            if (piece is Pawn && ((piece.Color == ChessColor.White && destiny.Row == 0) || (piece.Color == ChessColor.Black && destiny.Row == 7)))
+            {
+                char pieceLabel = Display.ReadPromotion();
+
+                ExecutePromotion(pieceLabel, destiny);
+            }
+            else
+            {
+                Promotion = false;
+            }
+
+            // Check 
+
             if (IsInCheck(Opponent(CurrentPlayer)))
             {
                 Check = true;
@@ -56,6 +79,8 @@ namespace ChessGame
             {
                 Check = false;
             }
+
+            // CheckMate
 
             if (IsInCheckMate(Opponent(CurrentPlayer)))
             {
@@ -67,11 +92,9 @@ namespace ChessGame
                 ChangePlayer();
             }
 
-            Piece piece = Board.Piece(destiny);
-
             // En Passant
 
-            if(piece is Pawn && (destiny.Row == origin.Row -2 || destiny.Row == origin.Row + 2))
+            if (piece is Pawn && (destiny.Row == origin.Row - 2 || destiny.Row == origin.Row + 2))
             {
                 VulnerableEnPassant = piece;
                 return;
@@ -96,21 +119,21 @@ namespace ChessGame
             // Long Castling
             if (piece is King && destiny.Row == origin.Column - 2)
             {
-                Position hookOrigin = new Position(origin.Row, origin.Column - 4);
-                Position hookDestiny = new Position(origin.Row, origin.Column - 1);
-                Piece hook = Board.RemovePiece(hookDestiny);
-                hook.DecreaseMovementAmount();
-                Board.PlacePiece(hook, hookOrigin);
+                Position towerOrigin = new Position(origin.Row, origin.Column - 4);
+                Position towerDestiny = new Position(origin.Row, origin.Column - 1);
+                Piece tower = Board.RemovePiece(towerDestiny);
+                tower.DecreaseMovementAmount();
+                Board.PlacePiece(tower, towerOrigin);
             }
 
             // Short Castling
             if (piece is King && destiny.Row == origin.Column + 2)
             {
-                Position hookOrigin = new Position(origin.Row, origin.Column + 3);
-                Position hookDestiny = new Position(origin.Row, origin.Column + 1);
-                Piece hook = Board.RemovePiece(hookDestiny);
-                hook.DecreaseMovementAmount();
-                Board.PlacePiece(hook, hookOrigin);
+                Position towerOrigin = new Position(origin.Row, origin.Column + 3);
+                Position towerDestiny = new Position(origin.Row, origin.Column + 1);
+                Piece tower = Board.RemovePiece(towerDestiny);
+                tower.DecreaseMovementAmount();
+                Board.PlacePiece(tower, towerOrigin);
             }
 
             // En Passant
@@ -186,30 +209,30 @@ namespace ChessGame
             // Long Castling
             if (piece is King && destiny.Column == origin.Column - 2)
             {
-                Position hookOrigin = new Position(origin.Row, origin.Column - 4);
-                Position hookDestiny = new Position(origin.Row, origin.Column - 1);
-                Piece hook = Board.RemovePiece(hookOrigin);
-                hook.AddMovementAmount();
-                Board.PlacePiece(hook, hookDestiny);
+                Position towerOrigin = new Position(origin.Row, origin.Column - 4);
+                Position towerDestiny = new Position(origin.Row, origin.Column - 1);
+                Piece tower = Board.RemovePiece(towerOrigin);
+                tower.AddMovementAmount();
+                Board.PlacePiece(tower, towerDestiny);
             }
 
             // Short Castling
             if (piece is King && destiny.Column == origin.Column + 2)
             {
-                Position hookOrigin = new Position(origin.Row, origin.Column + 3);
-                Position hookDestiny = new Position(origin.Row, origin.Column + 1);
-                Piece hook = Board.RemovePiece(hookOrigin);
-                hook.AddMovementAmount();
-                Board.PlacePiece(hook, hookDestiny);
+                Position towerOrigin = new Position(origin.Row, origin.Column + 3);
+                Position towerDestiny = new Position(origin.Row, origin.Column + 1);
+                Piece tower = Board.RemovePiece(towerOrigin);
+                tower.AddMovementAmount();
+                Board.PlacePiece(tower, towerDestiny);
             }
 
             // En Passant
-            if(piece is Pawn)
+            if (piece is Pawn)
             {
-                if(origin.Column != destiny.Column && capturedPiece == null) 
+                if (origin.Column != destiny.Column && capturedPiece == null)
                 {
                     Position pawnPosition;
-                    if(piece.Color == ChessColor.White)
+                    if (piece.Color == ChessColor.White)
                     {
                         pawnPosition = new(destiny.Row + 1, destiny.Column);
                     }
@@ -224,6 +247,28 @@ namespace ChessGame
             }
 
             return capturedPiece;
+        }
+
+        public void ExecutePromotion(char pieceLabel, Position destiny)
+        {
+            Piece piece = Board.RemovePiece(destiny);
+            Pieces.Remove(piece);
+
+            switch (pieceLabel)
+            {
+                case 'T':
+                    PromotionPiece = new Tower(Board, CurrentPlayer);
+                    break;
+                case 'B':
+                    PromotionPiece = new Bishop(Board, CurrentPlayer);
+                    break;
+                case 'H':
+                    PromotionPiece = new Horse(Board, CurrentPlayer);
+                    break;
+            }
+
+            Board.PlacePiece(PromotionPiece, destiny);
+            Pieces.Add(PromotionPiece);
         }
 
         public HashSet<Piece> PiecesCaptured(ChessColor color)
@@ -360,14 +405,14 @@ namespace ChessGame
         private void BuildBoardSetup()
         {
 
-            PlaceNewPiece('a', 1, new Hook(Board, ChessColor.White));
+            PlaceNewPiece('a', 1, new Tower(Board, ChessColor.White));
             PlaceNewPiece('b', 1, new Horse(Board, ChessColor.White));
             PlaceNewPiece('c', 1, new Bishop(Board, ChessColor.White));
             PlaceNewPiece('d', 1, new Queen(Board, ChessColor.White));
             PlaceNewPiece('e', 1, new King(Board, ChessColor.White, this));
             PlaceNewPiece('f', 1, new Bishop(Board, ChessColor.White));
             PlaceNewPiece('g', 1, new Horse(Board, ChessColor.White));
-            PlaceNewPiece('h', 1, new Hook(Board, ChessColor.White));
+            PlaceNewPiece('h', 1, new Tower(Board, ChessColor.White));
             PlaceNewPiece('a', 2, new Pawn(Board, ChessColor.White, this));
             PlaceNewPiece('b', 2, new Pawn(Board, ChessColor.White, this));
             PlaceNewPiece('c', 2, new Pawn(Board, ChessColor.White, this));
@@ -377,14 +422,14 @@ namespace ChessGame
             PlaceNewPiece('g', 2, new Pawn(Board, ChessColor.White, this));
             PlaceNewPiece('h', 2, new Pawn(Board, ChessColor.White, this));
 
-            PlaceNewPiece('a', 8, new Hook(Board, ChessColor.Black));
+            PlaceNewPiece('a', 8, new Tower(Board, ChessColor.Black));
             PlaceNewPiece('b', 8, new Horse(Board, ChessColor.Black));
             PlaceNewPiece('c', 8, new Bishop(Board, ChessColor.Black));
             PlaceNewPiece('d', 8, new Queen(Board, ChessColor.Black));
             PlaceNewPiece('e', 8, new King(Board, ChessColor.Black, this));
             PlaceNewPiece('f', 8, new Bishop(Board, ChessColor.Black));
             PlaceNewPiece('g', 8, new Horse(Board, ChessColor.Black));
-            PlaceNewPiece('h', 8, new Hook(Board, ChessColor.Black));
+            PlaceNewPiece('h', 8, new Tower(Board, ChessColor.Black));
             PlaceNewPiece('a', 7, new Pawn(Board, ChessColor.Black, this));
             PlaceNewPiece('b', 7, new Pawn(Board, ChessColor.Black, this));
             PlaceNewPiece('c', 7, new Pawn(Board, ChessColor.Black, this));

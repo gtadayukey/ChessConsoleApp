@@ -27,10 +27,10 @@ namespace ChessGame
             return false;
         }
 
-        private bool TestHookCastling(Position position)
+        private bool TestTowerCastling(Position position)
         {
             Piece piece = Board.Piece(position);
-            return piece is Hook && MovementAmount == 0;
+            return piece is Tower && MovementAmount == 0;
         }
 
         public override bool[,] PossibleMovements()
@@ -62,8 +62,8 @@ namespace ChessGame
             if (MovementAmount == 0 && !Match.Check)
             {
                 // Long Castling
-                Position hookPosition1 = new(Position.Row, Position.Column - 4);
-                if (TestHookCastling(hookPosition1))
+                Position towerPosition1 = new(Position.Row, Position.Column - 4);
+                if (TestTowerCastling(towerPosition1))
                 {
                     Position p1 = new(Position.Row, Position.Column - 1);
                     Position p2 = new(Position.Row, Position.Column - 2);
@@ -76,8 +76,8 @@ namespace ChessGame
                 }
 
                 // Short Castling
-                Position hookPosition2 = new(Position.Row, Position.Column + 3);
-                if (TestHookCastling(hookPosition2))
+                Position towerPosition2 = new(Position.Row, Position.Column + 3);
+                if (TestTowerCastling(towerPosition2))
                 {
                     Position p1 = new(Position.Row, Position.Column + 1);
                     Position p2 = new(Position.Row, Position.Column + 2);

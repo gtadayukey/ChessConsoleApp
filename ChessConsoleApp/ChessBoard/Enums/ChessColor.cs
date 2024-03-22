@@ -2,7 +2,7 @@
 {
     enum ChessColor
     {
-        White, 
+        White,
         Black
     }
 }

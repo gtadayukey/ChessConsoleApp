@@ -19,7 +19,7 @@
 
         public override string ToString()
         {
-            return Row +    
+            return Row +
                    ", " +
                    Column;
         }

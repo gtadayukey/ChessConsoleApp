@@ -2,9 +2,9 @@
 
 namespace ChessGame
 {
-    internal class Hook : Piece
+    internal class Tower : Piece
     {
-        public Hook(Board board, ChessColor color) : base(board, color) { }
+        public Tower(Board board, ChessColor color) : base(board, color) { }
 
         public override string ToString()
         {

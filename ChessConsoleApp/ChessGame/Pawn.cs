@@ -55,10 +55,10 @@ namespace ChessGame
                 positionsToValidate = new int[] { -1, -2, 3, -1 };
             }
 
-            if(Position.Row == positionsToValidate[2])
+            if (Position.Row == positionsToValidate[2])
             {
                 Position left = new(Position.Row, Position.Column - 1);
-                if(Board.ValidPosition(left) && CanEat(left) && Match.VulnerableEnPassant == Board.Piece(left))
+                if (Board.ValidPosition(left) && CanEat(left) && Match.VulnerableEnPassant == Board.Piece(left))
                 {
                     matrix[left.Row + positionsToValidate[3], left.Column] = true;
                 }

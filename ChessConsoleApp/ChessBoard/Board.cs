@@ -31,7 +31,7 @@
 
         public void PlacePiece(Piece piece, Position position)
         {
-            if(ExistPiece(position))
+            if (ExistPiece(position))
             {
                 throw new BoardException("Already have a piece placed here!");
             }
@@ -56,7 +56,7 @@
 
         public bool ValidPosition(Position position)
         {
-            if(position.Row < 0 || position.Column < 0 || position.Row >= Rows || position.Column >= Columns)
+            if (position.Row < 0 || position.Column < 0 || position.Row >= Rows || position.Column >= Columns)
             {
                 return false;
             }
@@ -66,9 +66,9 @@
 
         public void ValidatePosition(Position position)
         {
-            if(!ValidPosition(position))
+            if (!ValidPosition(position))
             {
-                throw new BoardException("Invalid Position!");
+                throw new BoardException("Invalid position!");
             }
         }
 

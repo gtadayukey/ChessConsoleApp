@@ -27,7 +27,28 @@ namespace ChessDisplay
             }
         }
 
-        public static void PrintBoard(Board board)
+        public static void GetUserInputs(ChessMatch match)
+        {
+            Console.Write("\nOrigin: ");
+            Position origin = ReadChessLabel().ToPosition();
+
+            match.ValidateOriginPosition(origin);
+
+            bool[,] possibleMovement = match.Board.Piece(origin).PossibleMovements();
+
+            Console.Clear();
+            PrintBoard(match.Board, possibleMovement);
+
+            Console.Write("\nDestiny: ");
+            Position destiny = ReadChessLabel().ToPosition();
+
+            match.ValidateDestinyPosition(origin, destiny);
+
+            match.Play(origin, destiny);
+        }
+
+
+        private static void PrintBoard(Board board)
         {
             Console.WriteLine("    a b c d e f g h\n");
 
@@ -43,7 +64,7 @@ namespace ChessDisplay
             Console.WriteLine("\n    a b c d e f g h");
         }
 
-        public static void PrintBoard(Board board, bool[,] possibleMovement)
+        private static void PrintBoard(Board board, bool[,] possibleMovement)
         {
             ConsoleColor originalBackground = Console.BackgroundColor;
             ConsoleColor alteredBackground = ConsoleColor.DarkGray;
@@ -74,7 +95,7 @@ namespace ChessDisplay
         }
 
 
-        public static void PrintCapturedPieces(ChessMatch match)
+        private static void PrintCapturedPieces(ChessMatch match)
         {
             Console.WriteLine("Captured pieces:");
             Console.Write("White: ");
@@ -87,7 +108,7 @@ namespace ChessDisplay
             Console.WriteLine();
         }
 
-        public static void PrintSet(HashSet<Piece> set)
+        private static void PrintSet(HashSet<Piece> set)
         {
             Console.Write("[ ");
             foreach (Piece piece in set)
@@ -97,7 +118,7 @@ namespace ChessDisplay
             Console.Write("]");
         }
 
-        public static void PrintPiece(Piece piece)
+        private static void PrintPiece(Piece piece)
         {
 
             if (piece == null)
@@ -121,14 +142,44 @@ namespace ChessDisplay
             }
         }
 
-        public static ChessLabel ReadChessLabel()
+        private static ChessLabel ReadChessLabel()
         {
-            string input = Console.ReadLine();
 
-            char column = input[0];
-            int row = int.Parse(input[1] + "");
+            string? input = Console.ReadLine();
 
-            return new ChessLabel(column, row);
+            if (!string.IsNullOrEmpty(input) && input.Length == 2)
+            {
+                if (char.IsLetter(input[0]) && char.IsNumber(input[1]))
+                {
+                    char column = input[0];
+                    int row = int.Parse(input[1] + "");
+
+                    return new ChessLabel(column, row);
+                }
+            }
+
+            throw new BoardException("Invalid input!");
+
+        }
+
+        public static char ReadPromotion()
+        {
+            Console.Write("\nChosse promotional piece [ Q T B H ]: ");
+            string? input = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(input))
+            {
+                input = input.ToUpper();
+
+                if (char.IsLetter(input[0]) && input.Length == 1)
+                {
+                    char character = input[0];
+
+                    return character;
+                }
+            }
+
+            return 'Q';
         }
     }
 }
