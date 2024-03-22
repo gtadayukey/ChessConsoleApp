@@ -1,5 +1,5 @@
 # Chess Console App
-This Chess Console App is a fully functional and playable implementation of the classic game of chess, built using C#. Players can enjoy a game against each other directly through the console interface. The project focuses on practicing Object-Oriented principles and mastering the basic syntax of C#.
+This Chess Console App is a fully functional and playable implementation of the classic game of chess, built using C# with .NET. Players can enjoy a game against each other directly through the console interface. The project focuses on practicing Object-Oriented principles and mastering the basic syntax of C#.
 
 ![image](https://github.com/gtadayukey/ChessConsoleApp/assets/100155376/ef37e1b0-43dd-4ba1-8cf9-4b9f48f3a94a)
 
