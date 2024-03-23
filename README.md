@@ -1,5 +1,5 @@
 # Chess Console App
-This Chess Console App is a fully functional and playable implementation of the classic game of chess, built using C# with .NET. Players can enjoy a game against each other directly through the console interface. The project focuses on practicing Object-Oriented principles and mastering the basics of C#.
+This Chess Console App is a fully functional and playable implementation of the classic game of chess, built using C# with .NET. Players can enjoy a game against each other directly through the console interface. The project focuses on practicing Object-Oriented principles and mastering the fundamentals of C#.
 
 ![image](https://github.com/gtadayukey/ChessConsoleApp/assets/100155376/ef37e1b0-43dd-4ba1-8cf9-4b9f48f3a94a)
 
@@ -20,7 +20,7 @@ This Chess Console App is a fully functional and playable implementation of the 
 ## Future Implementations
 
 1. Web Interface Implementation
-Introduce a web interface using Entity Framework and JavaScript to enhance the visual appeal and usability of the chess game. This web interface could replace or complement the existing console interface, providing users with a more interactive and visually engaging experience.
+Introduce a web interface using Entity Framework and JavaScript to enhance the visual appeal and usability of the chess game. This web interface would replace the existing console interface, providing users with a more interactive and visually engaging experience.
 
 2. PGN Chess Code Reader
 Develop a PGN (Portable Game Notation) reader to parse and interpret chess matches recorded in PGN format. This feature would allow users to replay historic games move by move, observing strategies and tactics employed by world-class players.
