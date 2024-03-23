@@ -269,11 +269,11 @@ namespace ChessGame
         {
             HashSet<Piece> aux = new();
 
-            foreach (Piece x in CapturedPieces)
+            foreach (Piece piece in CapturedPieces)
             {
-                if (x.Color == color)
+                if (piece.Color == color)
                 {
-                    aux.Add(x);
+                    aux.Add(piece);
                 }
             }
 
@@ -284,11 +284,11 @@ namespace ChessGame
         {
             HashSet<Piece> aux = new();
 
-            foreach (Piece x in Pieces)
+            foreach (Piece piece in Pieces)
             {
-                if (x.Color == color)
+                if (piece.Color == color)
                 {
-                    aux.Add(x);
+                    aux.Add(piece);
                 }
             }
 
@@ -309,11 +309,11 @@ namespace ChessGame
 
         private Piece King(ChessColor color)
         {
-            foreach (Piece x in PiecesInGame(color))
+            foreach (Piece piece in PiecesInGame(color))
             {
-                if (x is King)
+                if (piece is King)
                 {
-                    return x;
+                    return piece;
                 }
             }
 
@@ -330,9 +330,9 @@ namespace ChessGame
                 throw new BoardException($"Does't have a {color} King in game!");
             }
 
-            foreach (Piece x in PiecesInGame(Opponent(color)))
+            foreach (Piece piece in PiecesInGame(Opponent(color)))
             {
-                bool[,] matrix = x.PossibleMovements();
+                bool[,] matrix = piece.PossibleMovements();
                 if (matrix[king.Position.Row, king.Position.Column])
                 {
                     return true;
@@ -344,9 +344,9 @@ namespace ChessGame
 
         public bool IsThreatenedPosition(Position position, ChessColor color)
         {
-            foreach (Piece x in PiecesInGame(Opponent(color)))
+            foreach (Piece piece in PiecesInGame(Opponent(color)))
             {
-                bool[,] matrix = x.PossibleMovements();
+                bool[,] matrix = piece.PossibleMovements();
 
                 if (matrix[position.Row, position.Column] == true)
                 {
@@ -364,16 +364,16 @@ namespace ChessGame
                 return false;
             }
 
-            foreach (Piece x in PiecesInGame(color))
+            foreach (Piece piece in PiecesInGame(color))
             {
-                bool[,] matrix = x.PossibleMovements();
+                bool[,] matrix = piece.PossibleMovements();
                 for (int i = 0; i < Board.Rows; i++)
                 {
                     for (int j = 0; j < Board.Columns; j++)
                     {
                         if (matrix[i, j])
                         {
-                            Position origin = x.Position;
+                            Position origin = piece.Position;
                             Position destiny = new(i, j);
                             Piece capturedPiece = ExecuteMovement(origin, destiny);
                             bool inCheck = IsInCheck(color);
