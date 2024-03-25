@@ -20,22 +20,12 @@ This Chess Console App is a fully functional and playable implementation of the 
 ## Future Implementations
 
 1. Web Interface Implementation
-Introduce a web interface using Entity Framework and JavaScript to enhance the visual appeal and usability of the chess game. This web interface would replace the existing console interface, providing users with a more interactive and visually engaging experience.
-
 2. PGN Chess Code Reader
-Develop a PGN (Portable Game Notation) reader to parse and interpret chess matches recorded in PGN format. This feature would allow users to replay historic games move by move, observing strategies and tactics employed by world-class players.
-
-3. Database Integration
-Integrate a database to store and retrieve famous chess matches, including those of legendary players such as Garry Kasparov, Bobby Fischer, Magnus Carlsen, and Hikaru Nakamura. This database could serve as a valuable resource for players to study and learn from historic games.
-
+3. Famous Matches - Database Integration
 4. Basic AI Opponent
-Implement a basic AI opponent to enable single-player gameplay. The AI would analyze the board state and make strategic decisions to provide a challenging gaming experience for solo players. Initially, the AI could employ simple algorithms such as minimax with alpha-beta pruning.
-
 5. Online Multiplayer Support
-Explore options to add online multiplayer functionality, allowing players to compete against friends or other enthusiasts over the internet. Implementing features such as matchmaking, chat, and leaderboards could further enhance the multiplayer experience.
-
 6. Advanced AI Algorithms
-For advanced users, implement more sophisticated AI algorithms, such as neural networks or reinforcement learning, to create a stronger and more dynamic opponent. These algorithms could adapt and improve over time, providing a challenging opponent for players of all skill levels.
+7. Match Analyzer
 
 
 
